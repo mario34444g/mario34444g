@@ -1,46 +1,91 @@
-/* Estilos Generales */
+/* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
+/* Estilo para el formulario de login */
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #555;
+}
+
+/* Estilo para la página de notas */
 header {
     background-color: #003366;
     color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 20px;
+    text-align: center;
 }
 
-header .logo img {
-    width: 120px;
-}
-
-nav ul {
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-left: 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
+section.notas {
+    margin: 20px;
     padding: 20px;
     background-color: white;
-    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-section h1, section h2 {
+section.notas h2 {
     color: #003366;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #003366;
+    color: white;
 }
 
 footer {
@@ -53,10 +98,3 @@ footer {
     width: 100%;
 }
 
-/* Estilos para Móviles */
-@media only screen and (max-width: 600px) {
-    nav ul li {
-        display: block;
-        text-align: center;
-    }
-}
