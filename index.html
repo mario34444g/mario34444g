@@ -4,66 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CNE - Poder Electoral de Auradon</title>
+    <title>Iniciar Sesión - Notas Universidad</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo-cne.png" alt="Logo CNE">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#mision-vision">Misión y Visión</a></li>
-                <li><a href="#estructura">Estructura Organizativa</a></li>
-                <li><a href="#noticias">Noticias</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="inicio">
-        <h1>Consejo Nacional Electoral</h1>
-        <p>El Poder Electoral de la República Federal de Auradon se encarga de garantizar la transparencia y la legitimidad de los procesos electorales del país.</p>
-    </section>
-
-    <section id="mision-vision">
-        <h2>Misión y Visión</h2>
-        <p><strong>Misión:</strong> Garantizar la equidad, transparencia y confiabilidad de los procesos electorales.</p>
-        <p><strong>Visión:</strong> Ser una institución sólida que promueva la democracia y la participación ciudadana.</p>
-    </section>
-
-    <section id="estructura">
-        <h2>Estructura Organizativa</h2>
-        <ul>
-            <li>Presidente del CNE</li>
-            <li>Directores Regionales</li>
-            <li>Departamentos Técnicos</li>
-        </ul>
-    </section>
-
-    <section id="noticias">
-        <h2>Últimas Noticias</h2>
-        <article>
-            <h3>Elecciones Generales 2024</h3>
-            <p>El Consejo Nacional Electoral ha anunciado las fechas para las próximas elecciones generales en la República Federal de Auradon.</p>
-        </article>
-        <article>
-            <h3>Reglamento Electoral 2024</h3>
-            <p>Se ha publicado el nuevo reglamento para los próximos procesos electorales.</p>
-        </article>
-    </section>
-
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Email: contacto@cne-auradon.gov</p>
-        <p>Teléfono: +123 456 7890</p>
-        <p>Dirección: Calle Principal 123, Ciudad Capital, Auradon.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Consejo Nacional Electoral - República Federal de Auradon</p>
-    </footer>
+    <div class="login-container">
+        <h1>Iniciar Sesión</h1>
+        <form action="notas.html" method="post">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
 </body>
 </html>
+
