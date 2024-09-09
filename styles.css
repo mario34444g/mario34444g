@@ -1,91 +1,16 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
 }
 
-/* Estilo para el formulario de login */
-.login-container {
-    width: 300px;
-    margin: 100px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.login-container h1 {
-    margin-bottom: 20px;
-}
-
-.login-container label {
-    display: block;
-    margin-top: 10px;
-    text-align: left;
-}
-
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-container button:hover {
-    background-color: #555;
-}
-
-/* Estilo para la página de notas */
 header {
     background-color: #003366;
     color: white;
     padding: 20px;
     text-align: center;
-}
-
-section.notas {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-section.notas h2 {
-    color: #003366;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background-color: #003366;
-    color: white;
 }
 
 footer {
@@ -96,5 +21,100 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Estilo para la página de inicio de sesión */
+.login-container {
+    width: 400px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.login-container h1 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #002244;
+}
+
+.captcha {
+    margin-bottom: 30px;
+}
+
+.captcha input {
+    width: 100px;
+    margin-top: 5px;
+}
+
+/* Estilo para la página de cursos */
+.cursos {
+    width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.cursos h2 {
+    color: #003366;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f2f2f2;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #003366;
+    font-size: 18px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: #005599;
 }
 
