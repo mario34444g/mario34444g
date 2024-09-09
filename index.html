@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Iniciar Sesión - Notas Universidad</title>
+    <title>Iniciar Sesión - Plataforma de Notas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="login-container">
-        <h1>Iniciar Sesión</h1>
-        <form action="notas.html" method="post">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
+        <h1>Plataforma de Notas</h1>
+        <form action="cursos.html" method="post">
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
             
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <!-- CAPTCHA de prueba -->
+            <div class="form-group captcha">
+                <label for="captcha">Captcha: 3 + 4 = ?</label>
+                <input type="text" id="captcha" name="captcha" required>
+            </div>
             
-            <button type="submit">Ingresar</button>
+            <button type="submit">Iniciar Sesión</button>
         </form>
     </div>
 </body>
