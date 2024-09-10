@@ -9,8 +9,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #f39c12;
+            --primary-color: #87CEEB; /* Azul cielo */
+            --secondary-color: #F0E68C; /* Amarillo opaco */
             --background-color: #f4f7f9;
             --text-color: #333;
         }
@@ -72,7 +72,7 @@
         }
 
         nav ul li a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
@@ -118,7 +118,7 @@
         .btn {
             display: inline-block;
             background-color: var(--secondary-color);
-            color: white;
+            color: var(--text-color);
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
@@ -126,7 +126,7 @@
         }
 
         .btn:hover {
-            background-color: #e67e22;
+            background-color: #e6dc82;
         }
 
         .features {
@@ -204,9 +204,45 @@
 
         footer {
             background-color: var(--primary-color);
-            color: white;
-            padding: 20px 0;
+            color: var(--text-color);
+            padding: 40px 0;
             text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-info {
+            flex: 1;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            flex: 1;
+            text-align: right;
+        }
+
+        .footer-social a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin-left: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--secondary-color);
+        }
+
+        .slogan {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 20px;
+            color: var(--secondary-color);
         }
 
         @media (max-width: 768px) {
@@ -220,6 +256,15 @@
 
             .hero h2 {
                 font-size: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-info, .footer-social {
+                text-align: center;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -308,9 +353,23 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Consejo Nacional Electoral de la República Federal de Auradon. Todos los derechos reservados.</p>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p>Consejo Nacional Electoral de la República Federal de Auradon</p>
+                <p>Correo electrónico: contacto@cne.auradon.gov</p>
+                <p>Teléfono: +1 234 567 8900</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
         </div>
+        <div class="slogan">
+            <p>"El nuevo poder electoral, SU CNE"</p>
+        </div>
+        <p>&copy; 2024 Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
