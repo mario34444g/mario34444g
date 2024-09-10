@@ -4,32 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFTER - Detalles de la Película</title>
-    <link rel="stylesheet" href="styles.css?v=1.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
         .movie-details {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 2rem auto;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
-        .movie-details img {
-            max-width: 100%;
-            border-radius: 5px;
+
+        .movie-details:hover {
+            transform: translateY(-5px);
         }
+
+        .movie-header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .movie-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-header:hover img {
+            transform: scale(1.05);
+        }
+
+        .movie-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: #fff;
+            padding: 1rem;
+        }
+
+        .movie-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
         .movie-info {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #eee;
         }
-        .rating {
+
+        .info-item {
             display: flex;
             align-items: center;
         }
-        .rating img {
-            width: 30px;
-            margin-right: 10px;
+
+        .info-item i {
+            margin-right: 0.5rem;
+            color: #ff5733;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        h3 {
+            color: #ff5733;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #ff5733;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e64a2e;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #444;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ff5733;
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .movie-details {
+            animation: fadeIn 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -38,37 +177,48 @@
         <h1>CINEPELIS - Detalles de la Película</h1>
     </header>
     
-    <section class="movie-details">
-        <h2>AFTER</h2>
-        <img src="images/imagen1.jpg" alt="AFTER">
+    <main class="movie-details">
+        <div class="movie-header">
+            <img src="images/imagen1.jpg" alt="AFTER">
+            <div class="movie-title">
+                <h2>AFTER</h2>
+            </div>
+        </div>
         
         <div class="movie-info">
-            <p><strong>Fecha de estreno:</strong> 12 de abril de 2019</p>
-            <div class="rating">
-                <img src="images/png-transparent-imdb-icon.png" alt="IMDb">
+            <div class="info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>12 de abril de 2019</span>
+            </div>
+            <div class="info-item">
+                <i class="fab fa-imdb"></i>
                 <span>5.3/10</span>
             </div>
-            <div class="rating">
-                <img src="images/Rotten_Tomatoes_rotten.svg.png" alt="Rotten Tomatoes">
+            <div class="info-item">
+                <i class="fas fa-tomato"></i>
                 <span>18%</span>
             </div>
         </div>
         
-        <h3>Sinopsis</h3>
-        <p>Tessa Young acaba de llegar a la universidad, y su estable y ordenada vida da un giro cuando conoce a Hardin Scott, un misterioso y rebelde joven que le hará cuestionar todo lo que creía saber sobre sí misma y lo que quiere de la vida.</p>
-        
-        <h3>Detalles</h3>
-        <ul>
-            <li><strong>Director:</strong> Jenny Gage</li>
-            <li><strong>Guion:</strong> Susan McMartin, Tamara Chestna, Jenny Gage</li>
-            <li><strong>Basada en:</strong> la novela "After" de Anna Todd</li>
-            <li><strong>Género:</strong> Drama romántico</li>
-            <li><strong>Duración:</strong> 105 minutos</li>
-        </ul>
-        
-        <a href="https://t.me/peliculasymasg/441" target="_blank" class="btn">Ver en Telegram</a>
-        <a href="index.html" class="btn">Volver al catálogo</a>
-    </section>
+        <div class="content">
+            <h3>Sinopsis</h3>
+            <p>Tessa Young acaba de llegar a la universidad, y su estable y ordenada vida da un giro cuando conoce a Hardin Scott, un misterioso y rebelde joven que le hará cuestionar todo lo que creía saber sobre sí misma y lo que quiere de la vida.</p>
+            
+            <h3>Detalles</h3>
+            <ul>
+                <li><strong>Director:</strong> Jenny Gage</li>
+                <li><strong>Guion:</strong> Susan McMartin, Tamara Chestna, Jenny Gage</li>
+                <li><strong>Basada en:</strong> la novela "After" de Anna Todd</li>
+                <li><strong>Género:</strong> Drama romántico</li>
+                <li><strong>Duración:</strong> 105 minutos</li>
+            </ul>
+            
+            <div class="btn-container">
+                <a href="https://t.me/peliculasymasg/441" target="_blank" class="btn">Ver en Telegram</a>
+                <a href="index.html" class="btn btn-secondary">Volver al catálogo</a>
+            </div>
+        </div>
+    </main>
     
     <footer>
         <p>© 2024 CINEPELIS - Todos los derechos reservados <a href="https://t.me/peliculasymasg" target="_blank">@peliculasymasg</a></p>
