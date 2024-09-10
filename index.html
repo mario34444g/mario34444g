@@ -3,46 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CINEPELIS - Catálogo de Películas</title>
-    <link rel="stylesheet" href="styles.css?v=1.2">
+    <title>CNE - Consejo Nacional Electoral de Auradon</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f39c12;
+            --background-color: #f4f7f9;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 60px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x600');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        .features {
+            padding: 50px 0;
+        }
+
+        .features h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .news {
+            padding: 50px 0;
+            background-color: white;
+        }
+
+        .news h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .news-item {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .news-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-item h4 {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>CINEPELIS - Catálogo de Películas</h1>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://via.placeholder.com/60" alt="Logo CNE Auradon">
+                <h1>CNE Auradon</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#noticias">Noticias</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <section class="catalogo">
-        <h2>Películas Disponibles</h2>
-        
-        <div class="pelicula">
-            <a href="after.html" class="movie-link">
-                <img src="images/imagen1.jpg" alt="AFTER">
-            </a>
-            <h3>AFTER</h3>
-            <a href="https://t.me/peliculasymasg/441" target="_blank" class="btn">Ver en Telegram</a>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Consejo Nacional Electoral de Auradon</h2>
+            <p>Garantizando la democracia y la transparencia en nuestras elecciones</p>
+            <a href="#" class="btn">Infórmate sobre las próximas elecciones</a>
         </div>
-        
-        <div class="pelicula">
-            <a href="beetlejuice.html" class="movie-link">
-                <img src="images/5833387378876724388.jpg" alt="Beetlejuice Beetlejuice">
-            </a>
-            <h3>Beetlejuice Beetlejuice (2024)</h3>
-            <a href="https://t.me/peliculasymasg/440" target="_blank" class="btn">Ver en Telegram</a>
-        </div>
-        
-        <div class="pelicula">
-            <a href="un-lugar-en-silencio.html" class="movie-link">
-                <img src="images/4938390557454085366.jpg" alt="Un Lugar En Silencio">
-            </a>
-            <h3>Un Lugar En Silencio</h3>
-            <a href="https://t.me/peliculasymasg/17" target="_blank" class="btn">Ver en Telegram</a>
-        </div>
-        
-        <!-- Aquí puedes agregar más películas -->
     </section>
-    
+
+    <section class="features">
+        <div class="container">
+            <h3>Nuestros Servicios</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-vote-yea"></i>
+                    <h4>Registro Electoral</h4>
+                    <p>Mantén actualizado tu registro para participar en las elecciones.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-ballot"></i>
+                    <h4>Voto Electrónico</h4>
+                    <p>Sistema seguro y eficiente para ejercer tu derecho al voto.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Resultados en Tiempo Real</h4>
+                    <p>Accede a los resultados electorales de manera inmediata y transparente.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>Observación Electoral</h4>
+                    <p>Participa como observador en nuestros procesos electorales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news">
+        <div class="container">
+            <h3>Últimas Noticias</h3>
+            <div class="news-grid">
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Noticia 1">
+                    <div class="news-content">
+                        <h4>Convocatoria a Elecciones Regionales</h4>
+                        <p>El CNE anuncia las fechas para las próximas elecciones regionales en Auradon.</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Noticia 2">
+                    <div class="news-content">
+                        <h4>Actualización del Sistema de Voto Electrónico</h4>
+                        <p>Implementamos nuevas medidas de seguridad en nuestro sistema de votación.</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Noticia 3">
+                    <div class="news-content">
+                        <h4>Jornada de Registro Electoral</h4>
+                        <p>Participa en nuestra jornada especial de actualización del registro electoral.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>© 2024 CINEPELIS - Todos los derechos reservados <a href="https://t.me/peliculasymasg" target="_blank">@peliculasymasg</a></p>
+        <div class="container">
+            <p>&copy; 2024 Consejo Nacional Electoral de la República Federal de Auradon. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
