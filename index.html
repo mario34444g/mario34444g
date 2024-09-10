@@ -9,10 +9,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         :root {
-            --primary-color: #87CEEB; /* Azul cielo */
-            --secondary-color: #F0E68C; /* Amarillo opaco */
-            --background-color: #f4f7f9;
+            --primary-color: #1a5f7a; /* Azul oscuro */
+            --secondary-color: #ffd700; /* Amarillo dorado */
+            --background-color: #f0f8ff; /* Azul muy claro */
             --text-color: #333;
+            --highlight-color: #ff6b6b; /* Color de resaltado */
         }
 
         * {
@@ -58,8 +59,9 @@
         }
 
         .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         nav ul {
@@ -72,10 +74,12 @@
         }
 
         nav ul li a {
-            color: var(--text-color);
+            color: white;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         nav ul li a:hover {
@@ -111,22 +115,28 @@
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .btn {
             display: inline-block;
             background-color: var(--secondary-color);
-            color: var(--text-color);
-            padding: 10px 20px;
+            color: var(--primary-color);
+            padding: 12px 24px;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn:hover {
-            background-color: #e6dc82;
+            background-color: #e6c200;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .features {
@@ -136,7 +146,8 @@
         .features h3 {
             text-align: center;
             margin-bottom: 30px;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
         }
 
         .feature-grid {
@@ -159,9 +170,15 @@
         }
 
         .feature-item i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
+            font-size: 3rem;
+            color: var(--highlight-color);
             margin-bottom: 20px;
+        }
+
+        .feature-item h4 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
 
         .news {
@@ -172,7 +189,8 @@
         .news h3 {
             text-align: center;
             margin-bottom: 30px;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
         }
 
         .news-grid {
@@ -186,6 +204,11 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
         }
 
         .news-item img {
@@ -200,11 +223,13 @@
 
         .news-item h4 {
             margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 1.3rem;
         }
 
         footer {
             background-color: var(--primary-color);
-            color: var(--text-color);
+            color: white;
             padding: 40px 0;
             text-align: center;
         }
@@ -228,7 +253,7 @@
         }
 
         .footer-social a {
-            color: var(--text-color);
+            color: white;
             font-size: 1.5rem;
             margin-left: 15px;
             transition: color 0.3s ease;
@@ -239,10 +264,11 @@
         }
 
         .slogan {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-top: 20px;
             color: var(--secondary-color);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         @media (max-width: 768px) {
@@ -273,7 +299,7 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="images/images.png" alt="Logo CNE Auradon">
+                <img src="https://via.placeholder.com/60" alt="Logo CNE Auradon">
                 <h1>CNE Auradon</h1>
             </div>
             <nav>
@@ -361,7 +387,7 @@
             </div>
             <div class="footer-social">
                 <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
