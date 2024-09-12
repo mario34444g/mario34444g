@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Electoral - CNE Auradon</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet"> <!-- Reutilizamos el mismo archivo CSS -->
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="images/images.png" alt="Logo CNE Auradon">
+                <div class="logo-text">
+                    <h1>CNE Auradon</h1>
+                    <p>Consejo Nacional Electoral</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#noticias">Noticias</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="registration">
+        <div class="container">
+            <h2>Registro Electoral</h2>
+            <p>Consulta o actualiza tus datos en el registro electoral.</p>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="cedula">Cédula de Identidad:</label>
+                    <input type="text" id="cedula" name="cedula" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="consulta-o-actualizacion">¿Qué deseas hacer?</label>
+                    <select id="consulta-o-actualizacion" name="accion">
+                        <option value="consulta">Consultar Registro</option>
+                        <option value="actualizar">Actualizar Registro</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p>Consejo Nacional Electoral de la República Federal de Auradon</p>
+                <p>Correo electrónico: contacto@cne.auradon.gov</p>
+                <p>Teléfono: +1 234 567 8900</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="slogan">
+            <p>"El nuevo poder electoral, SU CNE"</p>
+        </div>
+        <p>&copy; 2024 Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
