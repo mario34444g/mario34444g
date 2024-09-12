@@ -353,6 +353,19 @@ footer {
 .form-group button:hover {
     background-color: var(--highlight-color);
 }
+/* Sección del banner con la imagen de fondo */
+.banner {
+    position: relative;
+    background-image: url('fondo_banner.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
 
 
 }
