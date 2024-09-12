@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voto Electrónico - CNE Auradon</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet"> <!-- Reutilizamos los estilos existentes -->
+    <style>
+        .candidate-grid {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .candidate-item {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .candidate-item i {
+            font-size: 80px;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .candidate-item:hover i {
+            color: #0056b3;
+        }
+
+        .confirmation, .comprobante {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="images/images.png" alt="Logo CNE Auradon">
+                <div class="logo-text">
+                    <h1>CNE Auradon</h1>
+                    <p>Consejo Nacional Electoral</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#servicios">Servicios</a></li>
+                    <li><a href="index.html#noticias">Noticias</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="vote">
+        <div class="container">
+            <h2>Simulación de Voto Electrónico</h2>
+            <p>Elige tu candidato/a haciendo clic en su ícono:</p>
+
+            <div class="candidate-grid">
+                <div class="candidate-item" onclick="seleccionarCandidato(1)">
+                    <i class="fas fa-user"></i>
+                    <p>Candidato/a 1</p>
+                </div>
+                <div class="candidate-item" onclick="seleccionarCandidato(2)">
+                    <i class="fas fa-user"></i>
+                    <p>Candidato/a 2</p>
+                </div>
+                <div class="candidate-item" onclick="seleccionarCandidato(3)">
+                    <i class="fas fa-user"></i>
+                    <p>Candidato/a 3</p>
+                </div>
+            </div>
+
+            <!-- Sección de confirmación -->
+            <div class="confirmation" id="confirmation">
+                <h3>¿Está seguro/a de su elección?</h3>
+                <div class="btn-group">
+                    <button class="btn" onclick="confirmarVoto()">Sí</button>
+                    <button class="btn" onclick="cancelarVoto()">No</button>
+                </div>
+            </div>
+
+            <!-- Sección de comprobante -->
+            <div class="comprobante" id="comprobante">
+                <h3>¡Voto Registrado!</h3>
+                <p>Su voto ha sido registrado correctamente.</p>
+                <p>Gracias por participar en la simulación de voto electrónico.</p>
+                <p><strong>Comprobante de Voto:</strong></p>
+                <p id="comprobanteTexto"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p>Consejo Nacional Electoral de la República Federal de Auradon</p>
+                <p>Correo electrónico: contacto@cne.auradon.gov</p>
+                <p>Teléfono: +1 234 567 8900</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="slogan">
+            <p>"El nuevo poder electoral, SU CNE"</p>
+        </div>
+        <p>&copy; 2024 Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let candidatoSeleccionado = null;
+
+        function seleccionarCandidato(numero) {
+            candidatoSeleccionado = numero;
+            document.getElementById('confirmation').style.display = 'block';
+        }
+
+        function confirmarVoto() {
+            document.getElementById('confirmation').style.display = 'none';
+            document.getElementById('comprobante').style.display = 'block';
+            document.getElementById('comprobanteTexto').innerText = "Ha votado por el Candidato/a " + candidatoSeleccionado;
+        }
+
+        function cancelarVoto() {
+            document.getElementById('confirmation').style.display = 'none';
+            candidatoSeleccionado = null;
+        }
+    </script>
+</body>
+</html>
