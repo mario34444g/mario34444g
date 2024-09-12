@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Electoral - CNE Auradon</title>
     <link href="styles.css" rel="stylesheet">
+    <style>
+        #resultadoRegistro {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -32,7 +41,7 @@
         <div class="container">
             <h2>Registro Electoral</h2>
             <p>Por favor, completa el formulario para actualizar tu registro o consultar tu estatus electoral.</p>
-            <form action="#" method="POST" class="form-registro">
+            <form id="formRegistro" class="form-registro">
                 <div class="form-group">
                     <label for="nombre">Nombre Completo:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
@@ -59,6 +68,15 @@
                     <button type="submit" class="btn">Registrar</button>
                 </div>
             </form>
+
+            <div id="resultadoRegistro">
+                <h3>Información del Votante</h3>
+                <p><strong>Nombre:</strong> <span id="nombreResultado"></span></p>
+                <p><strong>Cédula:</strong> <span id="cedulaResultado"></span></p>
+                <p><strong>Lugar de Votación:</strong> <span id="lugarVotacion"></span></p>
+                <p><strong>Centro de Votación:</strong> <span id="centroVotacion"></span></p>
+                <button id="actualizarRegistro" class="btn">Actualizar Registro</button>
+            </div>
         </div>
     </section>
 
@@ -81,5 +99,44 @@
         </div>
         <p>&copy; 2024 Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('formRegistro');
+            const resultadoDiv = document.getElementById('resultadoRegistro');
+            const actualizarBtn = document.getElementById('actualizarRegistro');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Obtener los datos del formulario
+                const nombre = document.getElementById('nombre').value;
+                const cedula = document.getElementById('cedula').value;
+                
+                // Generar lugar y centro de votación aleatorios
+                const lugares = ['Escuela Nacional de Auradon', 'Liceo Central de Auradon', 'Universidad de Auradon'];
+                const centros = ['Mesa 1, Salón Principal', 'Mesa 2, Auditorio', 'Mesa 3, Gimnasio'];
+                const lugarVotacion = lugares[Math.floor(Math.random() * lugares.length)];
+                const centroVotacion = centros[Math.floor(Math.random() * centros.length)];
+
+                // Mostrar los resultados
+                document.getElementById('nombreResultado').textContent = nombre;
+                document.getElementById('cedulaResultado').textContent = cedula;
+                document.getElementById('lugarVotacion').textContent = lugarVotacion;
+                document.getElementById('centroVotacion').textContent = centroVotacion;
+
+                // Ocultar el formulario y mostrar los resultados
+                form.style.display = 'none';
+                resultadoDiv.style.display = 'block';
+            });
+
+            actualizarBtn.addEventListener('click', function() {
+                // Ocultar los resultados y mostrar el formulario
+                resultadoDiv.style.display = 'none';
+                form.style.display = 'block';
+                form.reset();
+            });
+        });
+    </script>
 </body>
 </html>
