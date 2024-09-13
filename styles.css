@@ -366,6 +366,20 @@ footer {
     color: white;
     text-align: center;
 }
-
+.construction-banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffcc00;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+}
+.construction-banner i {
+    margin-right: 8px;
+}
 
 }
