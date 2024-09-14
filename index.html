@@ -8,6 +8,79 @@
     <link href="styles.css" rel="stylesheet">
     <link rel="icon" href="images/images.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .banner .cne-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+            z-index: 2;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .banner-text h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-text p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .banner {
+                height: 400px;
+            }
+
+            .banner-text h2 {
+                font-size: 2em;
+            }
+
+            .banner-text p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
 </head>
 <body>
        <!-- Mensaje de página en construcción -->
@@ -45,6 +118,7 @@
             <a href="proximas-elecciones.html" class="cta-button">Infórmate sobre las próximas elecciones</a>
         </div>
     </section>
+
 
     <section class="features">
         <div class="container">
