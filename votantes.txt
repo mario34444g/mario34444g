@@ -998,5 +998,5 @@
 96276237,2003-01-01,Universidad de Auradon,Habilitado
 85504755,1970-12-23,Liceo Central de Auradon,Inhabilitado
 1067880953,2005-03-05,SIN DEFINIR,REGISTRADO
-29613604,1984-01-26,Centro Cultural de Auradon,Habilitado
 7666843,2005-12-31,SIN DEFINIR,REGISTRADO
+29613604,1984-01-26,Centro Cultural de Auradon,Habilitado
