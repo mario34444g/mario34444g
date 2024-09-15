@@ -309,7 +309,7 @@
                 lugarVotacion.innerHTML = `<i class="fas fa-map-marker-alt"></i> Lugar de Votación: ${resultado.lugarVotacion}`;
                 estadoElectoral.innerHTML = `<i class="fas fa-info-circle"></i> Estado Electoral: ${resultado.estado}`;
                 if (resultado.estado === "Inhabilitado") {
-                    estadoElectoral.innerHTML += "<br>Para actualizar el registro debe hacerse presencial.";
+                    estadoElectoral.innerHTML += "<br>Para actualizar el registro debe hacerse presencia, en la sede del CNE mas cercana a su residencia.";
                 }
             } else {
                 mensajeResultado.innerHTML = '<i class="fas fa-exclamation-triangle"></i> No aparece en el registro electoral.';
