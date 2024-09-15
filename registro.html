@@ -4,22 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Electoral - CNE Auradon</title>
-    <link href="styles.css" rel="stylesheet">
-    <style>
-        #resultadoRegistro {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <!-- Mensaje de página en construcción -->
-    <div class="construction-banner">
-        <i class="fas fa-tools"></i> Queridos ciudadanos/as esta Página aún está en construcción
-    </div>
     <header>
         <div class="container header-content">
             <div class="logo">
@@ -40,50 +24,82 @@
             </nav>
         </div>
     </header>
+   <style>
 
-    <section class="registro">
-        <div class="container">
-            <h2>Registro Electoral</h2>
-            <p>Por favor, completa el formulario para actualizar tu registro o consultar tu estatus electoral.</p>
-            <form id="formRegistro" class="form-registro">
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
-                </div>
-                <div class="form-group">
-                    <label for="cedula">Cédula de Identidad:</label>
-                    <input type="text" id="cedula" name="cedula" placeholder="Ingresa tu cédula de identidad" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
-                </div>
-                <div class="form-group">
-                    <label for="estado">Estado:</label>
-                    <select id="estado" name="estado" required>
-                        <option value="" disabled selected>Selecciona tu estado</option>
-                        <option value="auradon-norte">Auradon Norte</option>
-                        <option value="auradon-sur">Auradon Sur</option>
-                        <option value="auradon-este">Auradon Este</option>
-                        <option value="auradon-oeste">Auradon Oeste</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn">Registrar</button>
-                </div>
-            </form>
 
-            <div id="resultadoRegistro">
-                <h3>Información del Votante</h3>
-                <p><strong>Nombre:</strong> <span id="nombreResultado"></span></p>
-                <p><strong>Cédula:</strong> <span id="cedulaResultado"></span></p>
-                <p><strong>Lugar de Votación:</strong> <span id="lugarVotacion"></span></p>
-                <p><strong>Centro de Votación:</strong> <span id="centroVotacion"></span></p>
-                <button id="actualizarRegistro" class="btn">Actualizar Registro</button>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #resultadoRegistro {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CNE Auradon - Consulta Electoral</h1>
+        <form id="formConsulta">
+            <div>
+                <label for="cedula">Cédula de Identidad:</label>
+                <input type="text" id="cedula" name="cedula" required>
             </div>
-        </div>
-    </section>
+            <div>
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            </div>
+            <button type="submit">Consultar</button>
+        </form>
 
+        <div id="resultadoRegistro" style="display:none;">
+            <h2>Resultado de la Consulta</h2>
+            <p id="mensajeResultado"></p>
+            <p id="lugarVotacion"></p>
+            <p id="estadoElectoral"></p>
+        </div>
+    </div>
     <footer id="contacto">
         <div class="container footer-content">
             <div class="footer-info">
@@ -105,41 +121,56 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('formRegistro');
+        let baseDeDatos = [];
+
+        // Función para cargar la base de datos desde el archivo de texto
+        async function cargarBaseDeDatos() {
+            try {
+                const response = await fetch('votantes.txt');
+                const texto = await response.text();
+                const lineas = texto.split('\n');
+                baseDeDatos = lineas.map(linea => {
+                    const [cedula, fechaNacimiento, lugarVotacion, estado] = linea.split(',');
+                    return { cedula, fechaNacimiento, lugarVotacion, estado };
+                });
+                console.log('Base de datos cargada:', baseDeDatos);
+            } catch (error) {
+                console.error('Error al cargar la base de datos:', error);
+            }
+        }
+
+        // Cargar la base de datos al iniciar la página
+        cargarBaseDeDatos();
+
+        document.getElementById('formConsulta').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const cedula = document.getElementById('cedula').value;
+            const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+            
+            const resultado = baseDeDatos.find(persona => 
+                persona.cedula === cedula && persona.fechaNacimiento === fechaNacimiento
+            );
+
             const resultadoDiv = document.getElementById('resultadoRegistro');
-            const actualizarBtn = document.getElementById('actualizarRegistro');
+            const mensajeResultado = document.getElementById('mensajeResultado');
+            const lugarVotacion = document.getElementById('lugarVotacion');
+            const estadoElectoral = document.getElementById('estadoElectoral');
 
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Obtener los datos del formulario
-                const nombre = document.getElementById('nombre').value;
-                const cedula = document.getElementById('cedula').value;
-                
-                // Generar lugar y centro de votación aleatorios
-                const lugares = ['Escuela Nacional de Auradon', 'Liceo Central de Auradon', 'Universidad de Auradon'];
-                const centros = ['Mesa 1, Salón Principal', 'Mesa 2, Auditorio', 'Mesa 3, Gimnasio'];
-                const lugarVotacion = lugares[Math.floor(Math.random() * lugares.length)];
-                const centroVotacion = centros[Math.floor(Math.random() * centros.length)];
+            if (resultado) {
+                mensajeResultado.textContent = "Ciudadano encontrado en el registro electoral.";
+                lugarVotacion.textContent = `Lugar de Votación: ${resultado.lugarVotacion}`;
+                estadoElectoral.textContent = `Estado Electoral: ${resultado.estado}`;
+                if (resultado.estado === "Inhabilitado") {
+                    estadoElectoral.textContent += ". Para actualizar el registro debe hacerse presencial.";
+                }
+            } else {
+                mensajeResultado.textContent = "No aparece en el registro electoral.";
+                lugarVotacion.textContent = "";
+                estadoElectoral.textContent = "";
+            }
 
-                // Mostrar los resultados
-                document.getElementById('nombreResultado').textContent = nombre;
-                document.getElementById('cedulaResultado').textContent = cedula;
-                document.getElementById('lugarVotacion').textContent = lugarVotacion;
-                document.getElementById('centroVotacion').textContent = centroVotacion;
-
-                // Ocultar el formulario y mostrar los resultados
-                form.style.display = 'none';
-                resultadoDiv.style.display = 'block';
-            });
-
-            actualizarBtn.addEventListener('click', function() {
-                // Ocultar los resultados y mostrar el formulario
-                resultadoDiv.style.display = 'none';
-                form.style.display = 'block';
-                form.reset();
-            });
+            resultadoDiv.style.display = 'block';
         });
     </script>
 </body>
