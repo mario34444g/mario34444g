@@ -271,7 +271,7 @@
 
     <script>
         let baseDeDatos = [];
-
+    
         async function cargarBaseDeDatos() {
             try {
                 const response = await fetch('votantes.txt');
@@ -286,9 +286,9 @@
                 console.error('Error al cargar la base de datos:', error);
             }
         }
-
+    
         cargarBaseDeDatos();
-
+    
         document.getElementById('formConsulta').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -298,25 +298,36 @@
             const resultado = baseDeDatos.find(persona => 
                 persona.cedula === cedula && persona.fechaNacimiento === fechaNacimiento
             );
-
+    
             const resultadoDiv = document.getElementById('resultadoRegistro');
             const mensajeResultado = document.getElementById('mensajeResultado');
             const lugarVotacion = document.getElementById('lugarVotacion');
             const estadoElectoral = document.getElementById('estadoElectoral');
-
+    
             if (resultado) {
                 mensajeResultado.innerHTML = '<i class="fas fa-user-check"></i> Ciudadano encontrado en el registro electoral.';
-                lugarVotacion.innerHTML = `<i class="fas fa-map-marker-alt"></i> Lugar de Votación: ${resultado.lugarVotacion}`;
-                estadoElectoral.innerHTML = `<i class="fas fa-info-circle"></i> Estado Electoral: ${resultado.estado}`;
-                if (resultado.estado === "Inhabilitado") {
-                    estadoElectoral.innerHTML += "<br>Para actualizar el registro debe hacerse presencia, en la sede del CNE mas cercana a su residencia.";
+                
+                if (resultado.lugarVotacion.trim().toUpperCase() === "SIN DEFINIR") {
+                    lugarVotacion.innerHTML = '<i class="fas fa-map-marker-alt"></i> Lugar de Votación: Sin definir';
+                } else {
+                    lugarVotacion.innerHTML = `<i class="fas fa-map-marker-alt"></i> Lugar de Votación: ${resultado.lugarVotacion}`;
+                }
+                
+                if (resultado.estado.trim().toUpperCase() === "REGISTRADO") {
+                    estadoElectoral.innerHTML = '<i class="fas fa-info-circle"></i> Estado Electoral: Registrado';
+                } else if (resultado.estado.trim().toUpperCase() === "INHABILITADO") {
+                    estadoElectoral.innerHTML = '<i class="fas fa-info-circle"></i> Estado Electoral: Inhabilitado<br>Para actualizar el registro debe hacerse presencia, en la sede del CNE mas cercana a su residencia.';
+                } else if (resultado.estado.trim().toUpperCase() === "HABILITADO") {
+                    estadoElectoral.innerHTML = '<i class="fas fa-info-circle"></i> Estado Electoral: Habilitado';
+                } else {
+                    estadoElectoral.innerHTML = `<i class="fas fa-info-circle"></i> Estado Electoral: ${resultado.estado}`;
                 }
             } else {
                 mensajeResultado.innerHTML = '<i class="fas fa-exclamation-triangle"></i> No aparece en el registro electoral.';
                 lugarVotacion.textContent = "";
                 estadoElectoral.textContent = "";
             }
-
+    
             resultadoDiv.style.display = 'block';
         });
     </script>
