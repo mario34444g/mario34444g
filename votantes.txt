@@ -23,7 +23,7 @@
 15390960,1966-05-17,Escuela Nacional de Auradon,Habilitado
 33197367,1993-08-22,Liceo Central de Auradon,Inhabilitado
 84623521,1989-10-28,Centro Cultural de Auradon,Inhabilitado
-24027265,1991-05-28,Liceo Central de Auradon,Inhabilitado
+24027265,05-05-2005,Liceo Central de Auradon,Inhabilitado
 12552779,1980-12-04,Polideportivo de Auradon,Inhabilitado
 18299411,2001-01-12,Universidad de Auradon,Habilitado
 39204857,2004-02-29,Polideportivo de Auradon,Habilitado
