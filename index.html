@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Notas - Inicio de Sesión</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CINEPELIS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1>Inicio de Sesión</h1>
-        <form action="/principal.html" method="GET">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
-
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
-
-            <button type="submit">Iniciar Sesión</button>
-        </form>
-    </div>
+    <header>
+        <h1>CINEPELIS</h1>
+        <input type="text" id="buscador" placeholder="Buscar película...">
+        <button onclick="buscarPelicula()">Buscar</button>
+    </header>
+    <main id="contenedor-peliculas">
+        <!-- Aquí se mostrarán las películas -->
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
+
