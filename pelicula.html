@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Película</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pelicula-container">
+        <img id="portada" class="portada" alt="Portada">
+        <div class="info">
+            <h1 id="titulo"></h1>
+            <p id="sinopsis"></p>
+            <p><strong>Calificación:</strong> <span id="calificacion"></span> ⭐</p>
+            <button id="ver-telegram" class="boton">Ver en Telegram</button>
+        </div>
+    </div>
+
+    <script>
+        async function cargarPelicula() {
+            const params = new URLSearchParams(window.location.search);
+            const titulo = params.get("titulo");
+
+            const respuesta = await fetch(`http://127.0.0.1:5000/buscar?titulo=${encodeURIComponent(titulo)}`);
+            const datos = await respuesta.json();
+
+            document.getElementById("titulo").textContent = datos.titulo;
+            document.getElementById("portada").src = datos.portada;
+            document.getElementById("sinopsis").textContent = datos.sinopsis;
+            document.getElementById("calificacion").textContent = datos.calificacion;
+            
+            const boton = document.getElementById("ver-telegram");
+            if (datos.enlace !== "No disponible") {
+                boton.onclick = () => window.open(datos.enlace, "_blank");
+            } else {
+                boton.textContent = "Aún no está disponible";
+                boton.disabled = true;
+            }
+        }
+
+        cargarPelicula();
+    </script>
+</body>
+</html>
