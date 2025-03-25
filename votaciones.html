@@ -13,6 +13,8 @@
     <div class="container">
         <h2>Selecciona tu candidato</h2>
         <form action="https://formspree.io/f/xovellqq" method="POST">
+            <input type="hidden" name="_next" value="https://mario34444g.github.io/confirmacion.html">
+            
             <label>
                 <input type="radio" name="candidato" value="Jorge Pérez" required> Jorge Pérez
             </label><br>
@@ -20,12 +22,9 @@
                 <input type="radio" name="candidato" value="Luisa Miranda" required> Luisa Miranda
             </label><br>
             
-            <!-- Campos ocultos adicionales -->
-            <input type="hidden" name="_subject" value="Nuevo Voto Registrado">
-            <input type="hidden" name="_next" value="https://mario34444g.github.io/confirmacion.html?candidato=${candidato}">
-            
             <button type="submit">🗳️ Confirmar Voto</button>
         </form>
+            
     </div>
     <footer>
         <p>&copy; 2025 TSE - Tribunal Supremo Electoral de Auradon</p>
