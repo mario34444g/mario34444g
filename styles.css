@@ -1,40 +1,54 @@
-
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: white;
-    margin: 0;
-    padding: 0;
-}
-header {
-    background-color: #003366;
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-}
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #002244;
-    padding: 10px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-}
-.container {
-    padding: 20px;
-    text-align: center;
-}
-footer {
-    background-color: #003366;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSE - Tribunal Supremo Electoral de Auradon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>TSE - Tribunal Supremo Electoral de Auradon</h1>
+    </header>
+    <nav>
+        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#funciones"><i class="fas fa-gavel"></i> Funciones</a>
+        <a href="#elecciones"><i class="fas fa-vote-yea"></i> Elecciones</a>
+        <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
+    </nav>
+    <div class="container" id="inicio">
+        <h2>Bienvenido al Tribunal Supremo Electoral de Auradon</h2>
+        <p>Garantizando la transparencia y democracia en el Reino de Auradon.</p>
+        <img src="tse_logo.png" alt="Logo del TSE" class="logo">
+    </div>
+    <div class="container" id="funciones">
+        <h2><i class="fas fa-gavel"></i> Funciones del TSE</h2>
+        <ul>
+            <li>Supervisar y organizar elecciones en Auradon.</li>
+            <li>Garantizar procesos electorales justos y transparentes.</li>
+            <li>Regulación y fiscalización de partidos políticos.</li>
+            <li>Emitir resoluciones en materia electoral.</li>
+        </ul>
+    </div>
+    <div class="container" id="elecciones">
+        <h2><i class="fas fa-vote-yea"></i> Próximas Elecciones</h2>
+        <p>Las elecciones generales se llevarán a cabo el 15 de noviembre de 2025.</p>
+        <p>¡Infórmate y participa en la democracia de Auradon!</p>
+    </div>
+    <div class="container" id="contacto">
+        <h2><i class="fas fa-envelope"></i> Contacto</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Dirección: Av. Central #123, Ciudad Real, Auradon</p>
+        <p><i class="fas fa-phone"></i> Teléfono: +555 123 456</p>
+        <p><i class="fas fa-envelope"></i> Email: contacto@tse-auradon.com</p>
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 TSE - Tribunal Supremo Electoral de Auradon. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
