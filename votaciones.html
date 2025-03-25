@@ -1,4 +1,3 @@
-<!-- votaciones.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,19 +6,6 @@
     <title>Votaciones - TSE Auradon</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script>
-        function confirmarVoto() {
-            const candidatoSeleccionado = document.querySelector('input[name="candidato"]:checked');
-            if (!candidatoSeleccionado) {
-                alert("Por favor, selecciona un candidato antes de continuar.");
-                return;
-            }
-            const confirmacion = confirm(`Confirmas tu voto por ${candidatoSeleccionado.dataset.nombre}?`);
-            if (confirmacion) {
-                document.getElementById("formVotacion").submit();
-            }
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -27,18 +13,23 @@
     </header>
     <div class="container">
         <h2>Selecciona tu candidato</h2>
-        <form id="formVotacion" action="procesar_voto.php" method="POST" target="_blank">
+        <form action="https://formspree.io/f/xovellqq" method="POST">
             <label>
-                <input type="radio" name="candidato" value="Jorge Pérez" data-nombre="Jorge Pérez"> Jorge Pérez
+                <input type="radio" name="candidato" value="Jorge Pérez" required> Jorge Pérez
             </label><br>
             <label>
-                <input type="radio" name="candidato" value="Luisa Miranda" data-nombre="Luisa Miranda"> Luisa Miranda
+                <input type="radio" name="candidato" value="Luisa Miranda" required> Luisa Miranda
             </label><br>
-            <button type="button" class="vote-button" onclick="confirmarVoto()">🗳️ Confirmar Voto</button>
+            
+            <!-- Campos ocultos adicionales -->
+            <input type="hidden" name="_subject" value="Nuevo Voto Registrado">
+            <input type="hidden" name="_next" value="https://mario34444g.github.io/pagina-de-confirmacion.html">
+            
+            <button type="submit">🗳️ Confirmar Voto</button>
         </form>
     </div>
     <footer>
-        <p>&copy; 2025 TSE - Tribunal Supremo Electoral de Auradon. Todos los derechos reservados.</p>
+        <p>&copy; 2025 TSE - Tribunal Supremo Electoral de Auradon</p>
     </footer>
 </body>
 </html>
