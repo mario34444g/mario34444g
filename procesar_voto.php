@@ -19,10 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <head>
             <title>Comprobante de Votación</title>
             <style>
-                body { font-family: Arial, sans-serif; text-align: center; }
-                .comprobante { border: 1px solid black; padding: 20px; display: inline-block; margin-top: 50px; }
-                .download-button { margin-top: 20px; padding: 10px; background: green; color: white; border: none; cursor: pointer; }
-                .timer { font-weight: bold; color: red; }
+                body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 20px; }
+                .container { max-width: 600px; margin: auto; background: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); }
+                .comprobante { padding: 20px; border: 2px solid white; border-radius: 5px; margin-top: 20px; }
+                .download-button { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #ffcc00; color: black; font-weight: bold; border: none; cursor: pointer; border-radius: 5px; text-decoration: none; transition: 0.3s; }
+                .download-button:hover { background: #e6b800; }
+                .timer { font-weight: bold; color: #ffcc00; }
             </style>
             <script>
                 setTimeout(function() {
@@ -32,13 +34,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </script>
         </head>
         <body>
-            <div class='comprobante'>
+            <div class='container'>
+                <h1>Tribunal Supremo Electoral de Auradon</h1>
                 <h2>Comprobante de Votación</h2>
-                <p>Has votado por: <strong>$candidato</strong></p>
-                <p>Fecha: " . date("d/m/Y H:i:s") . "</p>
-                <p class='timer'>Tienes 5 minutos para descargar tu comprobante.</p>
-                <a id='downloadButton' class='download-button' href='comprobantes/$comprobante' download>Descargar Comprobante</a>
-                <p id='message'></p>
+                <div class='comprobante'>
+                    <p>Has votado por: <strong>$candidato</strong></p>
+                    <p>Fecha: " . date("d/m/Y H:i:s") . "</p>
+                    <p class='timer'>Tienes 5 minutos para descargar tu comprobante.</p>
+                    <a id='downloadButton' class='download-button' href='comprobantes/$comprobante' download>Descargar Comprobante</a>
+                    <p id='message'></p>
+                </div>
             </div>
         </body>
         </html>";
