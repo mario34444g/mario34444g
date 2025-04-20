@@ -1,16 +1,9 @@
 {
-  "name": "mario34444g",
-  "version": "1.0.0",
-  "private": true,
-  "main": "/index.js",
-  "homepage": "https://mario34444g.github.io/mario34444g",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "react": "^18.0.0",
@@ -22,9 +15,8 @@
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
-  "devDependencies": {
-    "gh-pages": "^6.0.0"
-  },
+  "main": "/index.js",
+  "devDependencies": {},
   "browserslist": {
     "production": [
       ">0.2%",
