@@ -1,22 +1,27 @@
 {
+  "homepage": "https://mario34444g.github.io/mario34444g",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.0",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "autoprefixer": "^10.0.0",
     "tailwind-merge": "^2.4.0",
+    "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7"
   },
   "main": "/index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
